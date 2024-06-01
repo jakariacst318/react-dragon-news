@@ -5,9 +5,9 @@ import { MdOutlineShare, MdRemoveRedEye } from "react-icons/md";
 
 
 const NewsCard = ({ news }) => {
-    const { title, details, thumbnail_url, _id, author, total_view ,rating} = news
+    const { title, details, image_url, _id, author, total_view ,rating} = news
     const { img, published_date, name } = author;
-    const {number , badge} = rating
+    const {number } = rating
     return (
         <div>
             <div className='flex justify-between p-4 items-center mb-4'>
@@ -25,7 +25,7 @@ const NewsCard = ({ news }) => {
             </div>
             <div className="card w-full bg-base-100 shadow-xl border border-slate-300 mb-10 p-5">
                 <h2 className="card-title mb-5">{title}</h2>
-                <img className='h-[450px]' src={thumbnail_url} alt="news" />
+                <img className='h-96' src={image_url} alt="news" />
                 <div className="card-body">
 
 

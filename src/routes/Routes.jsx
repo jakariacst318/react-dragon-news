@@ -6,8 +6,10 @@ import About from "../pages/About/About";
 import Career from "../pages/Career/Career";
 import Login from "../pages/Shared/Login/Login";
 import Register from "../pages/Register/Register";
+import NewsPage from "../pages/NewsPage/NewsPage";
+import PrivetRoute from "./PrivetRoute";
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
@@ -15,7 +17,11 @@ const router = createBrowserRouter ([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('news.json')
+                loader: () => fetch('/news.json')
+            },
+            {
+                path: '/news/:id',
+                element: <PrivetRoute> <NewsPage></NewsPage> </PrivetRoute>
             },
             {
                 path: '/about',
@@ -37,4 +43,4 @@ const router = createBrowserRouter ([
     },
 ])
 
-export default router ;
+export default router;
